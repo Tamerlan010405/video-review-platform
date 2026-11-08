@@ -1,0 +1,187 @@
+/* Список лежит на белой панели с тонкой рамкой — так он отделён от фона страницы */
+.Wrapper{
+    flex: 0 1 auto;
+    min-height: 0;
+    margin-top: 12px;
+    padding: 0 32px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--vrp-panel);
+    border: 1px solid var(--vrp-border);
+    border-radius: var(--vrp-radius);
+}
+
+.Table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.Table th:nth-child(2),
+.Table td:nth-child(2){
+    width: 150px;
+}
+
+.Table th:nth-child(4),
+.Table td:nth-child(4){
+    width: 160px;
+}
+
+.Table th:nth-child(5),
+.Table td:nth-child(5){
+    width: 100px;
+}
+
+.Table th:last-child,
+.Table td:last-child{
+    width: 80px;
+}
+
+.Table th{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--vrp-panel);
+    padding: 16px 16px 12px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    color: var(--vrp-muted);
+    border-bottom: 1px solid var(--vrp-border);
+}
+
+.Table td{
+    padding: 24px 16px 24px 0;
+    font-size: 14px;
+    color: var(--vrp-muted);
+    border-bottom: 1px solid var(--vrp-border);
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Название монтажа не обрезаем, а переносим на следующую строку */
+.Table td:first-child{
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+}
+
+.Row{
+    cursor: pointer;
+}
+
+.Row:last-child td{
+    border-bottom: none;
+}
+
+.Title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Poster{
+    flex-shrink: 0;
+    width: 96px;
+    height: 54px;
+    background: var(--vrp-surface) center / cover no-repeat;
+    border-radius: var(--vrp-radius);
+}
+
+.TitleText{
+    min-width: 0;
+}
+
+.Link{
+    display: block;
+    font-family: var(--vrp-font-heading);
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--vrp-text);
+}
+
+.Row:hover .Link{
+    color: var(--vrp-accent);
+}
+
+.Description{
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--vrp-muted);
+}
+
+.Status{
+    white-space: nowrap;
+}
+
+.Progress{
+    width: 28%;
+}
+
+.Line{
+    height: 2px;
+    margin-bottom: 8px;
+    background: var(--vrp-border);
+}
+
+.LineFill{
+    height: 100%;
+    background: var(--vrp-text);
+    transition: width 0.5s ease;
+}
+
+.ProgressText{
+    font-size: 12px;
+}
+
+.Actions{
+    width: 72px;
+    padding-right: 0 !important;
+    text-align: right;
+}
+
+.Delete{
+    padding: 0;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--vrp-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.Row:hover .Delete,
+.Delete:focus-visible{
+    opacity: 1;
+}
+
+.Delete:hover{
+    color: var(--vrp-accent);
+}
+
+@media (max-width: 760px){
+    .Progress{
+        display: none;
+    }
+
+    .Poster{
+        width: 72px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 1100px){
+    .Hide{
+        display: none;
+    }
+
+    .Delete{
+        opacity: 1;
+    }
+}

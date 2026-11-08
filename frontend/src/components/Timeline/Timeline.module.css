@@ -1,0 +1,113 @@
+.Timeline{
+    position: relative;
+    padding-top: 22px;
+    cursor: pointer;
+    touch-action: none;
+    user-select: none;
+}
+
+.Ruler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 16px;
+    border-bottom: 1px solid var(--vrp-border);
+}
+
+.Tick{
+    position: absolute;
+    bottom: 0;
+    padding-left: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    font-variant-numeric: tabular-nums;
+    color: var(--vrp-muted);
+    border-left: 1px solid var(--vrp-border);
+}
+
+.Lane{
+    position: relative;
+    height: 24px;
+}
+
+.Pin{
+    position: absolute;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    transform: translateX(-50%);
+    background: var(--vrp-accent);
+    border: 1.5px solid var(--vrp-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: scale 0.25s ease;
+}
+
+.Pin:hover,
+.Pin:focus-visible{
+    scale: 1.4;
+    outline: none;
+}
+
+.PinResolved{
+    background: transparent;
+    border-color: var(--vrp-muted);
+}
+
+.Track{
+    height: 3px;
+    overflow: hidden;
+    background: var(--vrp-border);
+}
+
+.Progress{
+    height: 100%;
+    background: var(--vrp-text);
+}
+
+.Playhead{
+    position: absolute;
+    top: 16px;
+    bottom: -5px;
+    width: 1.5px;
+    transform: translateX(-0.75px);
+    background: var(--vrp-accent);
+    pointer-events: none;
+}
+
+.Playhead::before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -4px;
+    width: 9px;
+    height: 9px;
+    background: var(--vrp-accent);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.HoverLine{
+    position: absolute;
+    top: 16px;
+    bottom: 0;
+    width: 1px;
+    background: var(--vrp-border);
+    pointer-events: none;
+}
+
+.HoverLabel{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    transform: translateX(-50%);
+    margin-bottom: 2px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--vrp-bg);
+    background: var(--vrp-text);
+    border-radius: var(--vrp-radius);
+}

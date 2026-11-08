@@ -1,0 +1,102 @@
+.Workspace{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+}
+
+.Topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-shrink: 0;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--vrp-border);
+}
+
+.TopLeft{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+}
+
+.Back{
+    flex-shrink: 0;
+    font-size: 14px;
+    color: var(--vrp-muted);
+}
+
+.Back:hover{
+    color: var(--vrp-accent);
+}
+
+.TitleBlock{
+    min-width: 0;
+}
+
+.Title{
+    margin: 0;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Description{
+    font-size: 13px;
+    color: var(--vrp-muted);
+}
+
+.Body{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    flex: 1;
+    min-height: 0;
+}
+
+.Stage{
+    min-width: 0;
+    min-height: 0;
+    padding: 32px;
+}
+
+.Panel{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-left: 1px solid var(--vrp-border);
+}
+
+.Error{
+    grid-column: 1 / -1;
+    padding: 32px;
+}
+
+@media (max-width: 1000px){
+    .Workspace{
+        height: auto;
+        min-height: calc(100vh - 56px);
+    }
+
+    .Topbar{
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .Body{
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .Stage{
+        height: 75vh;
+        padding: 16px;
+    }
+
+    .Panel{
+        height: 560px;
+        border-left: none;
+        border-top: 1px solid var(--vrp-border);
+    }
+}

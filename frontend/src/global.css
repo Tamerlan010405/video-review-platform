@@ -1,0 +1,89 @@
+:root {
+  --vrp-bg: #F6F7F9;
+  --vrp-surface: #ECEFF3;
+  --vrp-panel: #FFFFFF;
+  --vrp-text: #1A1D21;
+  --vrp-muted: #6B7480;
+  --vrp-border: #DEE2E8;
+  --vrp-accent: #3D5A80;
+  --vrp-accent-hover: #2F4766;
+  --vrp-radius: 4px;
+  --vrp-font-heading: "Inter Tight", "Inter", system-ui, sans-serif;
+  --vrp-font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+/* Подстраиваем переменные Mantine под палитру «бумажного» минимализма */
+:root[data-mantine-color-scheme="light"] {
+  --mantine-color-body: var(--vrp-bg);
+  --mantine-color-text: var(--vrp-text);
+  --mantine-color-dimmed: var(--vrp-muted);
+  --mantine-color-default: var(--vrp-bg);
+  --mantine-color-default-hover: var(--vrp-surface);
+  --mantine-color-default-border: var(--vrp-border);
+  --mantine-color-default-color: var(--vrp-text);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--vrp-bg);
+  color: var(--vrp-text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--vrp-font-heading);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vrp-border);
+  border-radius: 4px;
+}
+
+/* Мягкое появление: лёгкий сдвиг и fade */
+@keyframes vrp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.vrp-rise {
+  animation: vrp-rise 500ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vrp-rise {
+    animation: none;
+  }
+}

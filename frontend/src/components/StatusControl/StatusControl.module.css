@@ -1,0 +1,59 @@
+.Note{
+    font-size: 13px;
+    white-space: nowrap;
+    color: var(--vrp-muted);
+}
+
+.Warning{
+    font-size: 13px;
+    white-space: nowrap;
+    color: var(--vrp-accent);
+}
+
+.HistoryButton{
+    padding: 0;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--vrp-muted);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--vrp-border);
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.HistoryButton:hover{
+    color: var(--vrp-accent);
+    border-color: var(--vrp-accent);
+}
+
+.HistoryTitle{
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: var(--vrp-muted);
+}
+
+.History{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.HistoryItem{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.Who{
+    color: var(--vrp-muted);
+}
+
+.HistoryDate{
+    color: var(--vrp-muted);
+    white-space: nowrap;
+}

@@ -1,0 +1,94 @@
+.Shell{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: 56px;
+    padding: 0 32px;
+    border-bottom: 1px solid var(--vrp-border);
+}
+
+.Logo{
+    font-family: var(--vrp-font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--vrp-text);
+}
+
+.Nav{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.NavItem{
+    font-size: 14px;
+    color: var(--vrp-muted);
+}
+
+.NavItem:hover,
+.NavItemActive{
+    color: var(--vrp-text);
+}
+
+.User{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--vrp-text);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--vrp-border);
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.User:hover{
+    color: var(--vrp-accent);
+    border-color: var(--vrp-accent);
+}
+
+.Role{
+    font-size: 12px;
+    color: var(--vrp-muted);
+}
+
+.MenuRole{
+    display: block;
+    font-size: 12px;
+    color: var(--vrp-muted);
+}
+
+.Current{
+    font-size: 12px;
+    color: var(--vrp-accent);
+}
+
+.Main{
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 700px){
+    .Header{
+        padding: 0 16px;
+    }
+
+    .Nav{
+        gap: 20px;
+    }
+
+    .Role{
+        display: none;
+    }
+}

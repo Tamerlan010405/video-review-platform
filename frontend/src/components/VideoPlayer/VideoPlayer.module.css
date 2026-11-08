@@ -1,0 +1,127 @@
+.Player{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.Screen{
+    position: relative;
+    flex: 1;
+    min-height: 240px;
+    overflow: hidden;
+    background: #111110;
+    border-radius: var(--vrp-radius);
+    cursor: pointer;
+}
+
+.Video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.FrameNote{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background: var(--vrp-accent);
+    border-radius: var(--vrp-radius);
+    pointer-events: none;
+}
+
+.Loader{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    color: #A8A39B;
+    background: #111110;
+}
+
+.Controls{
+    padding-top: 20px;
+}
+
+.Row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.Transport,
+.Rates{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.Control{
+    padding: 4px 8px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--vrp-muted);
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.Control:hover{
+    color: var(--vrp-text);
+}
+
+.ControlActive{
+    color: var(--vrp-text);
+    border-bottom-color: var(--vrp-text);
+}
+
+.Play{
+    min-width: 72px;
+    margin: 0 8px;
+    padding: 6px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--vrp-bg);
+    background: var(--vrp-text);
+    border: none;
+    border-radius: var(--vrp-radius);
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.Play:hover{
+    background: var(--vrp-accent);
+}
+
+.Readout{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.Timecode{
+    font-family: var(--vrp-font-mono);
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: var(--vrp-text);
+}
+
+.FrameInfo{
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--vrp-muted);
+}

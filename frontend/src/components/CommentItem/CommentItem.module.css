@@ -1,0 +1,88 @@
+.Item{
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--vrp-border);
+    border-left: 2px solid transparent;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.Active{
+    background: var(--vrp-surface);
+    border-left-color: var(--vrp-accent);
+}
+
+.Meta{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-bottom: 8px;
+}
+
+.Timecode{
+    padding: 0;
+    font-family: var(--vrp-font-mono);
+    font-size: 13px;
+    color: var(--vrp-text);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--vrp-border);
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.Timecode:hover{
+    color: var(--vrp-accent);
+    border-color: var(--vrp-accent);
+}
+
+.Author{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.Date{
+    font-size: 12px;
+    color: var(--vrp-muted);
+}
+
+.Thumbnail{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: var(--vrp-radius);
+    cursor: pointer;
+}
+
+.Text{
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.Resolved .Text{
+    color: var(--vrp-muted);
+    text-decoration: line-through;
+}
+
+.Actions{
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.Action{
+    padding: 0;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--vrp-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.Action:hover{
+    color: var(--vrp-accent);
+}

@@ -1,0 +1,184 @@
+/* Страница занимает ровно один экран: прокручивается только список внутри панели */
+.Page{
+    display: flex;
+    flex-direction: column;
+    max-width: 1120px;
+    height: calc(100vh - 56px);
+    min-height: 560px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+}
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+.Intro{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+    align-items: end;
+    flex-shrink: 0;
+    margin-bottom: 48px;
+}
+
+.Title{
+    grid-column: 1 / span 7;
+    margin: 0;
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.Aside{
+    grid-column: 9 / span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.Lead{
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--vrp-muted);
+}
+
+.Toolbar{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+}
+
+.Tabs{
+    display: flex;
+    gap: 28px;
+}
+
+.Tab{
+    padding: 0 0 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--vrp-muted);
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.Tab:hover{
+    color: var(--vrp-text);
+}
+
+.TabActive{
+    color: var(--vrp-text);
+    border-bottom-color: var(--vrp-text);
+}
+
+.Count{
+    margin-left: 6px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--vrp-muted);
+}
+
+.SearchBox{
+    position: relative;
+    width: 280px;
+    margin-bottom: 10px;
+}
+
+.SearchIcon{
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: var(--vrp-muted);
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+.SearchBox:focus-within .SearchIcon{
+    color: var(--vrp-accent);
+}
+
+.Search{
+    width: 100%;
+    height: 38px;
+    padding: 0 14px 0 38px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--vrp-text);
+    background: var(--vrp-surface);
+    border: 1px solid var(--vrp-border);
+    border-radius: var(--vrp-radius);
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.Search:hover{
+    border-color: var(--vrp-muted);
+}
+
+.Search:focus{
+    background: var(--vrp-bg);
+    border-color: var(--vrp-accent);
+}
+
+.Search::placeholder{
+    color: var(--vrp-muted);
+}
+
+.Empty{
+    margin-top: 12px;
+    padding: 80px 32px;
+    background: var(--vrp-panel);
+    border: 1px solid var(--vrp-border);
+    border-radius: var(--vrp-radius);
+}
+
+.EmptyTitle{
+    font-family: var(--vrp-font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.EmptyText{
+    max-width: 420px;
+    margin-top: 8px;
+    color: var(--vrp-muted);
+}
+
+@media (max-width: 900px){
+    /* На узких экранах места мало — там прокручивается вся страница */
+    .Page{
+        height: auto;
+        min-height: 0;
+        padding: 40px 16px 56px;
+    }
+
+    .Intro{
+        grid-template-columns: minmax(0, 1fr);
+        margin-bottom: 40px;
+    }
+
+    .Title,
+    .Aside{
+        grid-column: 1;
+    }
+
+    .SearchBox{
+        width: 100%;
+    }
+}

@@ -1,0 +1,26 @@
+.Status{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--vrp-text);
+}
+
+/* Один цвет, три формы: пустое кольцо — ждёт, половина — правки, полная заливка — принято */
+.Dot{
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid var(--vrp-muted);
+    border-radius: 50%;
+}
+
+.Dot[data-status="revision"]{
+    background: linear-gradient(90deg, var(--vrp-accent) 50%, transparent 50%);
+    border-color: var(--vrp-accent);
+}
+
+.Dot[data-status="approved"]{
+    background: var(--vrp-accent);
+    border-color: var(--vrp-accent);
+}

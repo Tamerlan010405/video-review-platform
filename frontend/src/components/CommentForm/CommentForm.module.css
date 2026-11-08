@@ -1,0 +1,21 @@
+.Form{
+    padding: 20px 24px 24px;
+    border-top: 1px solid var(--vrp-border);
+}
+
+.Label{
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--vrp-muted);
+}
+
+.Timecode{
+    margin-left: 4px;
+    font-family: var(--vrp-font-mono);
+    color: var(--vrp-text);
+}
+
+.Hint{
+    font-size: 12px;
+    color: var(--vrp-muted);
+}
